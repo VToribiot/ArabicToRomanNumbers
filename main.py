@@ -6,7 +6,7 @@ def validation(s):
 
     if not s.isalnum():
         return False
-    if not s.numeric():
+    if not s.isnumeric():
         return False
     if 1 > int(s) > 3999:
         return False
@@ -39,11 +39,14 @@ def intToRom(n):
 
     return num
 
+
 def main():
     print("Welcome to the Arabic Number to Roman Number Converter Program\n")
 
     number = input("Enter the Arabic number: ")
 
-    # input validation function
+    if validation(number):
+        print(f"The Roman equivalent of {number} is {intToRom(int(number))}")
 
-    # number conversion function
+
+main()
