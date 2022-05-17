@@ -1,16 +1,22 @@
-# This is a sample Python script.
+# 1. Accepts an integer from 1 to 3999 and converts it to roman numbers
+# 2. Allows number conversion as many times the user wants
+# 3. Checks the entered input
 
-# Press Mayús+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def validation(s):
 
+    if not s.isalnum():
+        return False
+    if not s.numeric():
+        return False
+    if 1 > int(s) > 3999:
+        return False
+    return True
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def main():
+    print("Welcome to the Arabic Number to Roman Number Converter Program\n")
 
+    number = input("Enter the Arabic number: ")
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+    # input validation function
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    # number conversion function
