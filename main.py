@@ -1,12 +1,12 @@
 def validation(s):
 
-    if not s.isalnum():
+    if not s.isalnum():  # Checks the presence of any special characters
         print("The entered input has special characters, please try again")
         return False
-    if not s.isnumeric():
+    if not s.isnumeric():  # Checks the presence of any letter
         print("The entered input has letters, please try again")
         return False
-    if int(s) > 3999 or int(s) < 1:
+    if int(s) > 3999 or int(s) < 1:  # Checks if it's within the range
         print("The entered input it's bigger than 3999 or smaller than 1, please try again")
         return False
     return True
@@ -14,7 +14,7 @@ def validation(s):
 
 def intToRoman(n):
 
-    rules = (
+    rules = (  # Definition of conversions
         ("M", 1000),
         ("CM", 900),
         ("D", 500),
@@ -64,4 +64,4 @@ def main():
                 break
 
 
-# main()
+main()
