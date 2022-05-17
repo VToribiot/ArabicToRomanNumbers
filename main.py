@@ -1,19 +1,18 @@
-# 1. Accepts an integer from 1 to 3999 and converts it to roman numbers
-# 2. Allows as many conversions as the user wants
-# 3. Checks the entered input
-
 def validation(s):
 
     if not s.isalnum():
+        print("The entered input has special characters, please try again")
         return False
     if not s.isnumeric():
+        print("The entered input has letters, please try again")
         return False
-    if 1 > int(s) > 3999:
+    if int(s) > 3999 or int(s) < 1:
+        print("The entered input it's bigger than 3999 or smaller than 1, please try again")
         return False
     return True
 
 
-def intToRom(n):
+def intToRoman(n):
 
     rules = (
         ("M", 1000),
@@ -42,16 +41,16 @@ def intToRom(n):
 
 
 def main():
-    print("Welcome to the Arabic Number to Roman Number Converter Program\n")
+    print("Welcome to the Arabic Number to Roman Number Converter Program")
     control = True
     while control:
         while True:
-            number = input("Enter the Arabic number: ")
+            number = input("\nEnter the Arabic number: ")
             if validation(number):
-                print(f"The Roman equivalent of {number} is {intToRom(int(number))}")
+                print(f"The Roman equivalent of {number} is {intToRoman(int(number))}")
                 break
             else:
-                print("The entered input has letters or special characters, please try again")
+                pass
 
         while True:
             leave = input("\nDo you want to leave the program? (y/n) ")
